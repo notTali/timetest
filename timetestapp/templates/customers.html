@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Customers</title>
+  </head>
+  <body>
+    {% extends 'home.html' %} {% block cont %}
+    <h1>Customers</h1>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      {% for customer in customers %}
+      <tr>
+        <td>{{customer.id}}</td>
+        <td>{{customer.name}}</td>
+        <td><a href="{% url 'customer' customer.id %}">View</a></td>
+        <td><a href="{% url 'update-customer' customer.id %}">Update</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    {% endblock cont %}
+  </body>
+</html>
