@@ -15,6 +15,7 @@
         <th>Name</th>
         <th></th>
         <th></th>
+        <th></th>
       </tr>
 
       {% for customer in customers %}
@@ -23,6 +24,7 @@
         <td>{{customer.name}}</td>
         <td><a href="{% url 'customer' customer.id %}">View</a></td>
         <td><a href="{% url 'update-customer' customer.id %}">Update</a></td>
+        <td><a href="{% url 'delete-customer' customer.id %}">Delete</a></td>
       </tr>
       {% endfor %}
     </table>

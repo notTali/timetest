@@ -33,3 +33,11 @@ def updateUser(request, pk):
             return redirect(users)
     context = {'form': form}
     return render(request, 'add-customer.html', context)
+ 
+def deleteUser(request, pk):
+    customer = Customer.objects.get(id=pk)
+    if request.method == "POST":
+        customer.delete()
+        return redirect(users)
+    context = {"customer":customer}
+    return render(request, 'delete.html', context)
