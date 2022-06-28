@@ -12,6 +12,9 @@
 
     <h2>Story</h2>
     <p>{{customer.story}}</p>
+
+    <span><a href="{% url 'update-customer' customer.id %}">Update</a></span>
+    <span><a href="{% url 'delete-customer' customer.id %}">Delete</a></span>
     {% endblock cont %}
   </body>
 </html>
