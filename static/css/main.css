@@ -20,9 +20,16 @@ p{
     padding: 20px 0px;
 }
 
+.heading img{
+    flex: 1;
+}
+
+
+
 .heading a {
     text-align: end;
     margin: 0px;
+    flex: 4;
 }
 
 input[type=submit]{
