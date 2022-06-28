@@ -12,3 +12,23 @@ h1{
 p{
     color: red;
 }
+
+.heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.heading a {
+    text-align: end;
+    margin: 0px;
+}
+
+input[type=submit]{
+    border: none;
+    width: fit-content;
+    padding: 5px 20px;
+    color: white;
+    background-color: black;
+}
