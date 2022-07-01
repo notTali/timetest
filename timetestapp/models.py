@@ -6,7 +6,7 @@ from django.db import models
 class Customer(models.Model):
     id = models.UUIDField(primary_key=True, editable=False, unique=True, default=uuid.uuid4)
     name = models.CharField(max_length=200)
-    image = models.ImageField(null=True, blank=True, default="1.jpeg")
+    image = models.ImageField(null=True, blank=True, default="default.jpeg")
     role = models.TextField(blank=True, null=True)
     story = models.TextField(blank=True, null=True)
 
