@@ -7,9 +7,11 @@
     <title>All Customers</title>
   </head>
   <body>
-    {% extends 'home.html' %} {% block cont %}
-
+    {% extends 'home.html' %} {% block cont %} {% if customer.image %}
     <img src="{{ customer.image.url }}" />
+    {% else %}
+    <img src="{% static 'images/default.jpeg' %}" />
+    {% endif %}
     <h1>{{customer.name}}</h1>
     <h2>Story</h2>
     <p>{{customer.story}}</p>
