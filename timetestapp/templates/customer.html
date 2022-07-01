@@ -8,11 +8,11 @@
   </head>
   <body>
     {% extends 'home.html' %} {% block cont %}
-    <h1>{{customer.name}}</h1>
 
+    <img src="{{ customer.image.url }}" />
+    <h1>{{customer.name}}</h1>
     <h2>Story</h2>
     <p>{{customer.story}}</p>
-
     <span><a href="{% url 'update-customer' customer.id %}">Update</a></span>
     <span><a href="{% url 'delete-customer' customer.id %}">Delete</a></span>
     {% endblock cont %}
