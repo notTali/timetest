@@ -10,7 +10,7 @@
     {% extends 'home.html' %} {% block cont %}
     <h1>Create a New Customer</h1>
 
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
       {% csrf_token %} {{form.as_p}}
       <input type="submit" value="Submit" />
     </form>
