@@ -16,7 +16,7 @@ def user(request, pk):
 def addUser(request):
     form = CutomerForm()
     if request.method == "POST":
-        form = CutomerForm(request.POST)
+        form = CutomerForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect(users)
@@ -27,7 +27,7 @@ def updateUser(request, pk):
     customer = Customer.objects.get(id=pk)
     form = CutomerForm(instance=customer)
     if request.method == "POST":
-        form = CutomerForm(request.POST, instance=customer)
+        form = CutomerForm(request.POST, request.FILES, instance=customer)
         if form.is_valid():
             form.save()
             return redirect(users)
