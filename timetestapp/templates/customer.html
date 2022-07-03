@@ -9,14 +9,21 @@
   <body>
     {% extends 'home.html' %} {% load static %} {% block cont %}
 
-    <h1>{{customer.name}}</h1>
+    <h1 style="margin: 10px 0px">{{customer.name}}</h1>
     {% if tags %} {% for tag in tags %}
-    <span>{{tag.name}}</span>
+    <span
+      style="
+        padding: 10px 20px;
+        border: 1px solid rgb(66, 16, 182);
+        margin: 20px 0px;
+      "
+      >{{tag.name}}</span
+    >
     {% endfor %} {% else %}
     <h2>No Tags</h2>
 
     {% endif %}
-    <h2>Story</h2>
+    <h2 style="margin: 10px 0px">Story</h2>
     <p>{{customer.story}}</p>
     <span><a href="{% url 'update-customer' customer.id %}">Update</a></span>
     <span><a href="{% url 'delete-customer' customer.id %}">Delete</a></span>
