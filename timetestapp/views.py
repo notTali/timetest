@@ -10,7 +10,8 @@ def users(request):
 
 def user(request, pk):
     customer = Customer.objects.get(id=pk)
-    context = {'customer':customer}
+    tags = customer.tags.all()
+    context = {'customer':customer, "tags":tags}
     return render(request, 'customer.html', context)
 
 def addUser(request):
