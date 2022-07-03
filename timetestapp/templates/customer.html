@@ -10,7 +10,12 @@
     {% extends 'home.html' %} {% load static %} {% block cont %}
 
     <h1>{{customer.name}}</h1>
-    <p>{{tags}}</p>
+    {% if tags %} {% for tag in tags %}
+    <span>{{tag.name}}</span>
+    {% endfor %} {% else %}
+    <h2>No Tags</h2>
+
+    {% endif %}
     <h2>Story</h2>
     <p>{{customer.story}}</p>
     <span><a href="{% url 'update-customer' customer.id %}">Update</a></span>
