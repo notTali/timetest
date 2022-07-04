@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'timetestapp',
-    "static"
+    "static",
+    'user',
 ]
 
 MIDDLEWARE = [

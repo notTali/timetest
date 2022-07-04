@@ -1,9 +1,9 @@
 from dataclasses import fields
 from pyexpat import model
 from django.forms import ModelForm
-from .models import Customer
+from .models import Project
 
-class CutomerForm(ModelForm):
+class ProjectForm(ModelForm):
     class Meta:
-        model = Customer
+        model = Project
         fields = '__all__'

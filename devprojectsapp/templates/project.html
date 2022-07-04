@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Customers</title>
+    <title>All project</title>
   </head>
   <body>
     {% extends 'home.html' %} {% load static %} {% block cont %}
 
-    <h1 style="margin: 10px 0px">{{customer.name}}</h1>
+    <h1 style="margin: 10px 0px">{{project.name}}</h1>
     {% if tags %} {% for tag in tags %}
     <span
       style="
@@ -24,12 +24,12 @@
 
     {% endif %}
     <h2 style="margin: 10px 0px">Story</h2>
-    <p>{{customer.story}}</p>
-    <span><a href="{% url 'update-customer' customer.id %}">Update</a></span>
-    <span><a href="{% url 'delete-customer' customer.id %}">Delete</a></span>
+    <p>{{project.story}}</p>
+    <span><a href="{% url 'update-project' project.id %}">Update</a></span>
+    <span><a href="{% url 'delete-project' project.id %}">Delete</a></span>
 
-    {% if customer.image %}
-    <img src="{{ customer.image.url }}" />
+    {% if project.image %}
+    <img src="{{ project.image.url }}" />
     {% else %}
     <img src="{% static 'images/default.jpeg' %}" />
     {% endif %} {% endblock cont %}
